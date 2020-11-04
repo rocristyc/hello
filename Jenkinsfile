@@ -24,6 +24,7 @@ pipeline {
 					echo 'list my dir' 
 					dir('build') {
 						sh 'pwd'
+						sh 'ls -alh'
                         }
 					}
 				}
