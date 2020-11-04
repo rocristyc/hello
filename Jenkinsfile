@@ -4,7 +4,7 @@ pipeline {
 	stages {
 		stage('Checkout python module repo from github') {
 			steps {
-                echo 'Pull latest from master'
+		                echo 'Pull latest from master'
 				sh 'mkdir -p build'
 				// Get master from GitHub
 				checkout([  
@@ -16,19 +16,19 @@ pipeline {
 					submoduleCfg: [], 
 					userRemoteConfigs: [[credentialsId: 'github-tivobot-jenkins-tivo', url: 'https://github.com/rocristyc/hello.git']]
 				])
-            }
+            		}
 		}
 		stage('check my python module repo') {
-            steps {
-			script {
-				echo 'list my dir' 
-				dir('build') {
-					sh 'pwd'
-					sh 'ls -alh'
-					sh 'echo START'
-                        	}
+            		steps {
+				script {
+					echo 'list my dir' 
+					dir('build') {
+						sh 'pwd'
+						sh 'ls -alh'
+						sh 'echo START'
+                        		}
+				}
 			}
-		}
-        }
-    }
+        	}
+    	}
 }
