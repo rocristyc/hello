@@ -21,13 +21,14 @@ pipeline {
 		stage('check my python module repo') {
             steps {
 			script {
-					echo 'list my dir' 
-					dir('build') {
-						sh 'pwd'
-						sh 'ls -alh'
-                        }
-					}
-				}
+				echo 'list my dir' 
+				dir('build') {
+					sh 'pwd'
+					sh 'ls -alh'
+					sh 'echo START'
+                        	}
+			}
+		}
         }
     }
 }
