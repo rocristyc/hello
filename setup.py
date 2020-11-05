@@ -1,16 +1,21 @@
-from setuptools import setup, find_packages
+#from setuptools import setup, find_packages
+import setuptools 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
 # Edit path to the auto generated versions file for your library.
 # This is where the __version__ and __requires__ variables are defined
-exec(open('hello/version.py').read())
+# exec(open('rocristyc_hello/version.py').read())
 
-setup(# make sure the 'name' here matches the one in build.gradle
+setuptools.setup(# make sure the 'name' here matches the one in build.gradle
       name='rocristyc-hello',
       # describe your package
       description='test python pkg for artifactory upload',
       # Boilerplate settings below.  Don't edit.
-      version=__version__,
-      packages=find_packages('hello'),
-      package_dir={'' : 'hello'},
-      install_requires=__requires__,
+      #version=__version__,
+      version="0.0.1",
+      packages=setuptools.find_packages(),      
+      #packages=find_packages('rocristyc-hello'),
+      #package_dir={'' : 'rocristyc-hello'},
+      #install_requires=__requires__,
       )
