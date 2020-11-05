@@ -9,11 +9,9 @@ pipeline {
 	stages {
 		stage('Checkout python module repo from github') {
 			steps {
-		                echo 'Pull latest from master'
-				sh 'ls -al'
-				sh 'python3 setup.py sdist'
-				//sh 'python3 -m twine upload --repository tivo dist/*'
-				sh 'python3 -m twine upload --repository-url http://repo-vip.tivo.com:8081/artifactory/api/pypi/pypi/simple --non-interactive dist/*'
+				// run these from a docker python container (client-qe-9 has python3, setuptools and twine installed)
+		                sh 'python3 setup.py sdist'
+				sh 'python3 -m twine upload --verbose --repository-url http://repo-vip.tivo.com:8081/artifactory/api/pypi/pypi-local dist/*'
             		}
 		}
     	}
