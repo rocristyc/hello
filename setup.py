@@ -13,7 +13,7 @@ setuptools.setup(# make sure the 'name' here matches the one in build.gradle
       description='test python pkg for artifactory upload',
       # Boilerplate settings below.  Don't edit.
       #version=__version__,
-      version="0.0.2",
+      version="0.1.0",
       packages=setuptools.find_packages(),      
       #packages=find_packages('rocristyc-hello'),
       #package_dir={'' : 'rocristyc-hello'},
